@@ -1,0 +1,37 @@
+
+{%extends 'index.html'%}
+{% load staticfiles %}
+{% csrf_token %}
+
+  {% block content %}
+	<div>Filtres
+		<form action="{% url 'filtra'%}" method ="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{form2.as_p}}
+		<input type="submit" value="Filtra"></input>
+
+	</div>
+  <div>
+	  
+  {%for i in result%}
+  {% if i.is_buyed%}
+  {%else%}
+   <div id="block">
+  <center>
+		<img src="{% static i.images_set.all.0.image.url %}" width="150px" height="200px"></img>
+  
+  </center>
+  <a href="/product/{{i.id}}">{{i.name}}</a>
+  
+  <p>{{i.price}}€</p>
+  <p>{{i.data}}</p>
+
+     </div>
+   {%endif%}
+  
+  {%endfor%}
+
+  </div>
+  {% endblock %}
+
+

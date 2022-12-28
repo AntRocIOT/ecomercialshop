@@ -1,0 +1,46 @@
+{% extends 'index.html'%}
+{% load staticfiles %}
+{%block content%}
+<h1>El teu carrito</h1>
+<table>
+	<thead>
+	<tr>
+		<th>Imatge</th>
+		<th>Producte</th>
+		
+		<th>Borrar</th>
+		<th>Preu </th>
+		
+	</tr></thead>
+	<tboby>
+	{%for item in cart%}
+	{%with product=item.product%}
+	<tr>
+		<td>
+			<a href="/product/{{product.id}}"><img src="{% static product.images_set.all.0.image.url %}" width="50px" height="100px"></img></a>
+		</td>
+		<td>{{product.name}}</td>
+		
+		<td><a href="{% url 'cart_remove' product.id%}">Borrar</a>
+		</td>
+		<td>{{item.price}}</td>
+		
+		
+	</tr>
+		{% endwith %}
+	{% endfor %}
+	<tr>
+	<td>Total</td>
+	<td> 
+</td>
+	<td>{{cart.get_total_price}}</td>
+	</tr>
+	</tboby>
+</table>
+<h2>Pas 1: Confirmació de la compra</h2>
+<div id ="logout">
+	<a href="/payment">
+	<input type="submit" value="Tramitar comanda"></input>
+    </a>
+  </div>
+{%endblock%}  

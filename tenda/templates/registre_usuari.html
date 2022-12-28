@@ -1,0 +1,12 @@
+{% extends 'index.html'%}
+{%block content%}
+<div id="right_column"></div>
+<h2>Registre d'usuari</h2>
+  <div ><form id="login"action="{% url 'registre'%}" method ="post">
+		{% csrf_token %}
+		{{form.as_p}}
+		
+		<input type="submit" value="Registra"></input>
+
+  </form></body>
+{%endblock%}

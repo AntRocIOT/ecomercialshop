@@ -1,0 +1,59 @@
+{% extends 'index.html'%}
+{% load staticfiles %}
+{%block content%}
+{% csrf_token %}
+<h2>Informació del producte</h2>
+  <div id="product">
+	  
+	  <p>Titòl: {{texts.name|escape}}</p>
+	  <p>Descripció: {{texts.description|escape }}</p>
+	  <p>Preu: {{texts.price|escape }} €</p>
+      <div class="slideshow-container">
+	  {%for ima in texts.images_set.all%}
+	  <div class="mySlides">
+	  <img src="{% static ima.image.url %}" width="250px" height="250px"></img>
+	  </div>
+	  {%endfor%}
+	  
+ 
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+	  </div>
+	  
+		
+	  </div>
+	  
+		<form id="logout" action="{% url 'cart_add' product_id=texts.id%}" method ="post">
+		{% csrf_token %}
+		{{form.as_p}}
+		<input type="submit" value="Add to cart"></input>
+		</form>
+		<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+{%endblock%} 

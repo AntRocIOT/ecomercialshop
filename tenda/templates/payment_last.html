@@ -1,0 +1,20 @@
+{% extends 'index.html'%}
+{%block content%}
+
+<h2>Pas3: Metode de pagament</h2>
+  <div id ="logout">
+		<p>Destinatari:{{user.username}}</p>
+	    <p>Adreça:{{adress}}</p>
+	    <p>Ciutat/població:{{city}}</p>
+	    <p>Provincia:{{province}}</p>
+	    <p>Codi postal:{{codipostal}}</p>
+		{% csrf_token %}
+		{{form2.render}}
+		
+	
+
+ </div>
+
+
+
+{%endblock%}    

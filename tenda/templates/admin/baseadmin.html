@@ -1,0 +1,19 @@
+{% load staticfiles %}
+<html>
+  <head>
+    <title>Admin zone</title>
+    <meta content="">
+     <link rel="stylesheet" href="{% static 'css/style.css'%}"></link>
+  </head>
+  <body>
+  <div style="background-color:black">
+	   <a href="/admin/user_list" >Users Zone</a>
+  <a href="/admin/product_list" >Products Zone</a>
+  <a href="/admin/payments_list" >Payments Zone</a>
+  </div>
+  {% block content %}
+  {% endblock %}  
+
+  
+  </body>
+</html>

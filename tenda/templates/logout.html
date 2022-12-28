@@ -1,0 +1,11 @@
+{% extends 'index.html'%}
+{%block content%}
+<h1>Tancar sessio</h1>
+
+  <div><form id="logout" action="{% url 'logout'%}" method ="post">
+		{% csrf_token %}
+		
+		<input type="submit" value="Logout"></input>
+
+  </form></div>
+{%endblock%} 

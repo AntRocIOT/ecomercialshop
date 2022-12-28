@@ -1,0 +1,306 @@
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+body{
+     font: 20px arial, sans-serif;
+     background-color:grey;
+     }
+.categori{
+	text-align:center;
+}
+.categori a:link, a:visited {
+    background-color: black;
+    color: blue;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+.categori a:hover, a:active {
+    background-color: grey;
+}
+#container{
+	float:left;
+}
+#left_column{
+	margin-left: 0px;
+	height:200px;
+	width:200px;
+}
+#right_column{
+	float:left;
+	margin-right: 0px;
+	height:600px;
+	width:200px;
+}
+#center_column{
+     float:left;
+	margin-right: 0px;
+	height:800px;
+	width:900px;
+}
+#block{
+	margin:auto;
+	height:350px;
+	width:250px;
+	padding:10px;
+	float:left;
+	text-align:center;
+	border: 2px solid grey;
+    border-radius: 1px;
+    padding:10 px;
+	
+}
+#product{
+border: 2px solid grey;
+    border-radius: 12px;
+    text-align:center;
+}
+#title{
+
+ margin:auto;
+ text-align: center;
+ background-color:black;
+ color:white;
+ overflow: auto;
+}
+#nav{
+margin:auto;
+ text-align: center;
+ overflow: auto;
+    background-color: #000000;
+
+}
+#nav a:link, a:visited {
+    background-color: black;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+#nav a:hover, a:active {
+    background-color: grey;
+}
+#search{
+margin:auto;
+ text-align: center;
+ background-color: #000000;
+ overflow: auto;
+}
+#search input[type=text]{
+width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#search select{
+width: 25%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+#logout{
+  text-align:center;
+  border: 2px solid grey;
+   border-radius: 12px;
+   background-color: #f2f2f2;
+   margin:auto;
+   padding:30px;
+}
+#login{
+text-align:center;
+  border: 2px solid grey;
+   border-radius: 12px;
+   background-color: #f2f2f2;
+   margin:auto;
+   padding:30px;
+}
+#input {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+.nav > li {
+		float:left;
+}
+.nav li ul{
+				display:none;
+				position:absolute;
+				min-width:140px;
+}
+.nav li:hover > ul {
+				display:block;
+			}
+.nav li ul li {
+				position:relative;
+			}
+			
+.nav li ul li ul {
+				right:-140px;
+				top:0px;
+			}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+#title{
+}
+#div
+{
+border: 1px solid #4CAF50;
+margin:auto;
+ text-align: center;
+ overflow: auto;
+}
+
+
+ /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+} 

@@ -1,0 +1,10 @@
+{% extends 'admin/baseadmin.html'%}
+{%block content%}
+  <div id ="login"><form action="{% url 'create_users'%}" method ="post">
+		{% csrf_token %}
+		{{form.as_p}}
+		
+		<input type="submit" value="Registra"></input>
+
+  </form></body>
+{%endblock%} 

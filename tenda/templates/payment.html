@@ -1,0 +1,14 @@
+{% extends 'index.html'%}
+{%block content%}
+<h2>Pas 2: Dades de enviament</h2>
+  <div><form id="logout"action="{% url 'payment'%}" method ="post">
+		{% csrf_token %}
+		{{form.as_p}}
+		
+		<input type="submit" value="Confirmar dades"></input>
+
+  </form></div>
+
+
+
+{%endblock%}   

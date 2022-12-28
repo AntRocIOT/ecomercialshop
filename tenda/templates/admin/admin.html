@@ -1,0 +1,7 @@
+{% extends 'admin/baseadmin.html' %} 
+{% block content %}
+{% csrf_token %}
+<div><p>Administrator:{{request.user.username}}</p>
+<p>Email:{{request.user.email}}</p>
+</div>
+{% endblock %}  

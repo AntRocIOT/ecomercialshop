@@ -1,0 +1,41 @@
+{% extends 'index.html'%}
+{% load staticfiles %}
+{%block content%}
+
+<h1>El teus anuncis</h1>
+<table>
+	<thead>
+	<tr>
+		<th>Imatge</th>
+		<th>Producte</th>
+		<th>Editar</th>
+
+		<th>Borrar</th>
+		<th>Preu </th>
+		
+	</tr></thead>
+	<tboby>
+	{%for item in listaproducts%}
+	{%if item.is_buyed%}
+	{%else%}
+	<tr>
+		<td>
+			<a href="/product/{{item.id}}"><img src="{% static item.images_set.all.0.image.url %}" width="50px" height="100px"></img></a>
+		</td>
+		<td>{{item.name}}</td>
+		<td><a href="/product_list/{{item.id}}/edit">Editar</a>
+
+		<td><a href="/product_list/{{item.id}}/eliminate">Borrar</a>
+		</td>
+		<td>{{item.price}}</td>
+		
+		
+	</tr>
+	{%endif%}
+
+	{% endfor %}
+	
+	</tboby>
+</table>
+{%endblock%}  
+ 

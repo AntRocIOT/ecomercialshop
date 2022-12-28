@@ -1,0 +1,32 @@
+{% extends 'admin/baseadmin.html' %} 
+{% block content %}
+<div style="background-color:black">
+	<a href="/admin/product_list/create">Create</a>
+</div>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Price</th>
+		<th>Is buyed?</th>
+
+
+		
+	</tr>
+{%for product in products%}
+
+<tr>
+<th>{{product.name}}</th>
+ <th>{{product.description}}</th>
+  <th>{{product.price}}</th>
+  <th>{{product.is_buyed}}</th>
+
+<th> <a href="/admin/product_list/{{product.id}}/edit">Edit</a></th>
+ <th><a href="/admin/product_list/{{product.id}}/eliminate" onclick="return confirm('Are you sure you want to delete this?')">Eliminate</a></th>
+</tr>
+
+
+{%endfor%}
+</table>
+
+{% endblock %}  

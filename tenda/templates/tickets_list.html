@@ -1,0 +1,35 @@
+{% extends 'index.html'%}
+{% load staticfiles %}
+{%block content%}
+<h1>Comandes rebudes</h1>
+<table>
+	<thead>
+	<tr>
+		
+		<th>Data</th>
+
+		<th>Adreça</th>
+		<th>Ciutat/Població</th>
+		<th>Preu </th>
+		
+		
+	</tr></thead>
+	<tboby>
+	{%for item in bill%}
+	
+	<tr>
+	
+		<td>{{item.data}}</td>
+		<td>{{item.adress}}</td>
+		<td>{{item.city}}</td>
+
+		<td>{{item.total}}</td>
+		
+		
+	</tr>
+
+	{% endfor %}
+	
+	</tboby>
+</table>
+{%endblock%}

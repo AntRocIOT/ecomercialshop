@@ -1,0 +1,21 @@
+{% extends 'index.html'%}
+{%block content%}
+<h2>Perfil</h2>
+{% if messages %}
+  <ul class="alert alert-success" role="alert">
+    {% for message in messages %}
+      <p class="{{ message.tags }}">{{ message }}</p>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+
+  <div ><form id="login"action="{% url 'profile'%}" method ="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{form.as_p}}
+		<input type="submit" value="Save"></input>
+
+  </form></div>
+  
+  
+{%endblock%}  

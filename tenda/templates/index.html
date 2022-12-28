@@ -1,0 +1,116 @@
+{% load staticfiles %}
+ 
+<html>
+  <head>
+    <title>Rummi</title>
+    <meta content="">
+    <style></style>
+    
+    <link rel="stylesheet" href="{% static 'css/style.css'%}"></link>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body>
+	  <div id="title">Rummi</div>
+  <div id="nav"><ul>
+		<a href="/ajuda">Ajuda</a>
+		<a href="/">Inici</a>
+		
+  <a href="/create_product" >Crear anuncis</a>
+   <a href="/product_list" >Els teus anuncis</a>
+   <a href="/tickets" >Comandes rebudes</a>
+  {%if not request.user.is_authenticated %} 
+  <a href="/login" >Iniciar sessio</a>
+  <a href="/registre" >Crea compte</a>
+  {%else%}
+  <a href="/logout" >Tancar sessio</a>
+  <a href="/profile" >Editar perfil</a>
+  {%endif%}
+  {%if request.user.is_superuser%}
+  <ul class="nav">
+  <li ><a href="/admin" >Admin zone</a>
+		<ul>
+							<li><a href="">ProductsZone</a></li>
+							<li><a href="">PaymentsZone</a></li>
+							<li><a href="">UserZone</a></li>
+							<li><a href="">CategoryZone</a></li>
+	     </ul>
+	</li>
+  </ul>
+  {%endif%}
+  <a href="/cart" >Carro({{  request.session.cart|length }})</a>
+  </ul></div>
+  <div id="search"><form action="{% url 'buscar'%}" method="post">
+	  {% csrf_token %}
+	  <input type="text" name="consulta"></input>
+	  <select name="provincia">
+		  <option value="">Provincia...</option>
+<option value="a coruña">A coru&#241;a</option>
+<option value="alava">&#193;lava</option>
+<option value="albacete">Albacete</option>
+<option value="alicante">Alicante</option>
+<option value="almeria">Almer&#237;a</option>
+<option value="asturias">Asturias</option>
+<option value="avila">&#193;vila</option>
+<option value="badajoz">Badajoz</option>
+<option value="baleares">Baleares</option>
+<option value="barcelona">Barcelona</option>
+<option value="burgos">Burgos</option>
+<option value="caceres">C&#225;ceres</option>
+<option value="cadiz">C&#225;diz</option>
+<option value="cantabria">Cantabria</option>
+<option value="castellon">Castell&#243;n</option>
+<option value="ceuta">Ceuta</option>
+<option value="ciudad real">Ciudad Real</option>
+<option value="cordoba">C&#243;rdoba</option>
+<option value="cuenca">Cuenca</option>
+<option value="extranjero">Extranjero</option>
+<option value="girona">Girona</option>
+<option value="granada">Granada</option>
+<option value="guadalajara">Guadalajara</option>
+<option value="guipuzcoa">Guip&#250;zcoa</option>
+<option value="huelva">Huelva</option>
+<option value="huesca">Huesca</option>
+<option value="jaen">Ja&#233;n</option>
+<option value="la rioja">La rioja</option>
+<option value="las palmas">Las palmas</option>
+<option value="leon">Le&#243;n</option>
+<option value="lleida">Lleida</option>
+<option value="lugo">Lugo</option>
+<option value="madrid">Madrid</option>
+<option value="malaga">M&#225;laga</option>
+<option value="melilla">Melilla</option>
+<option value="murcia">Murcia</option>
+<option value="navarra">Navarra</option>
+<option value="ourense">Ourense</option>
+<option value="palencia">Palencia</option>
+<option value="pontevedra">Pontevedra</option>
+<option value="salamanca">Salamanca</option>
+<option value="santa cruz de tenerife">Santa cruz de tenerife</option>
+<option value="segovia">Segovia</option>
+<option value="sevilla">Sevilla</option>
+<option value="soria">Soria</option>
+<option value="tarragona">Tarragona</option>
+<option value="teruel">Teruel</option>
+<option value="toledo">Toledo</option>
+<option value="valencia">Valencia</option>
+<option value="valladolid">Valladolid</option>
+<option value="vizcaya">Vizcaya</option>
+<option value="zamora">Zamora</option>
+<option value="zaragoza">Zaragoza</option>
+	  </select>
+	  <input type="submit" value="Buscar"></input>
+  </form></div>
+  <div id ="container">
+	  <div id="right_column"></div>
+	  <div id ="center_column">
+		  
+		  {% block content %}
+    {% endblock %}
+	  </div>
+	  <div id="right_column"></div>
+  </div> 
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

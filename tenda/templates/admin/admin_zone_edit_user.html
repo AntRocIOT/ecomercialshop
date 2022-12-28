@@ -1,0 +1,11 @@
+{% extends 'admin/baseadmin.html' %} 
+{% load staticfiles %}
+{% block content %}
+{% csrf_token %}
+<div ><form id="login" action="" method ="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{form.as_p}}
+		<input type="submit" value="Save"></input>
+
+  </form></div>
+{% endblock %} 
