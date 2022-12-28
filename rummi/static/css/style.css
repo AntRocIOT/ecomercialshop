@@ -1,0 +1,103 @@
+
+#container{
+	display: table;
+}
+#left_column{
+	margin-left: 0px;
+	height:200px;
+	width:200px;
+}
+#right_column{
+	float:left;
+	margin-right: 0px;
+	height:600px;
+	width:200px;
+}
+#center_column{
+     float:left;
+	margin-right: 0px;
+	height:800px;
+	width:900px;
+}
+#block{
+	margin:auto;
+	height:250px;
+	width:250px;
+	float:left;
+	text-align:center;
+	border: 2px solid grey;
+    border-radius: 12px;
+    padding:10 px;
+	
+}
+#product{
+border: 2px solid grey;
+    border-radius: 12px;
+    text-align:center;
+}
+#title{
+margin:auto;
+ text-align: center;
+ overflow: auto;
+}
+#nav{
+margin:auto;
+ text-align: center;
+ overflow: auto;
+}
+#search{
+margin:auto;
+ text-align: center;
+ overflow: auto;
+}
+#logout{
+  text-align:center;
+  border: 2px solid grey;
+   border-radius: 12px;
+   margin:auto;
+   padding:30px;
+}
+#login{
+text-align:center;
+  border: 2px solid grey;
+   border-radius: 12px;
+   margin:auto;
+   padding:30px;
+}
+#input {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+.nav > li {
+		float:left;
+}
+.nav li ul{
+				display:none;
+				position:absolute;
+				min-width:140px;
+}
+.nav li:hover > ul {
+				display:block;
+			}
+.nav li ul li {
+				position:relative;
+			}
+			
+.nav li ul li ul {
+				right:-140px;
+				top:0px;
+			}
+
+#div
+{
+border: 1px solid #4CAF50;
+margin:auto;
+ text-align: center;
+ overflow: auto;
+}
